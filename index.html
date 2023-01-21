@@ -67,7 +67,21 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="button primary">Замовити послугу</button>
+          <button type="button" class="button primary" data-modal-open>
+            Замовити послугу
+          </button>
+        </div>
+
+        <!-- Модальне вікно  -->
+
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button class="button" data-modal-close>
+              <svg class="modal-icon" width="11" height="11">
+                <use href="./images/icons.svg#icon-cross"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -143,6 +157,9 @@
                 alt="Десктопні додатки"
                 width="370"
               />
+              <div class="trumb">
+                <p class="text">Десктопні додатки</p>
+              </div>
             </li>
             <li class="item">
               <img
@@ -151,6 +168,9 @@
                 alt="Мобільні додатки"
                 width="370"
               />
+              <div class="trumb">
+                <p class="text">Мобільні додатки</p>
+              </div>
             </li>
             <li class="item">
               <img
@@ -159,6 +179,9 @@
                 alt="Дизайнерські рішення"
                 width="370"
               />
+              <div class="trumb">
+                <p class="text">Десктопні додатки</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -400,6 +423,12 @@
           </ul>
         </div>
       </section>
+      <!-- Модальне вікно  -->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="button" data-modal-close>Close</button>
+        </div>
+      </div>
     </main>
 
     <!-- Футер -->
@@ -460,5 +489,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

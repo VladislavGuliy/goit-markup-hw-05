@@ -192,6 +192,7 @@ body {
   height: 100%;
 
   background-color: var(--backdrop-color);
+  z-index: 2;
 }
 .backdrop.is-hidden {
   visibility: hidden;
@@ -454,7 +455,8 @@ body {
   align-items: center;
   border: 1px solid var(--bombay-color);
   border-radius: 4px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-list .client-link:hover,
 .client-list .client-link:focus {
@@ -623,13 +625,40 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
 }
-.works-list .text {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: var(--primary-text-color);
+.works-trumb {
+  position: relative;
+}
+.works-trumb::before {
+  display: inline-block;
+  position: absolute;
 
-  font-size: 16px;
-  line-height: 1.88;
+  width: 100%;
+  height: 100%;
+  content: "";
+
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+}
+.trumb-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.works-list .link:hover .trumb-text,
+.works-list .link:hover .works-trumb::before {
+  opacity: 1;
+}
+
+.trumb-text > .text {
+  margin: 0;
+  min-width: 322px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--primary-white-color);
 }
 .frame {
   border-left: 1px solid var(--gallery-color);
@@ -639,6 +668,14 @@ body {
   padding-bottom: 20px;
   padding-left: 24px;
   padding-right: 24px;
+}
+.frame .text {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--primary-text-color);
+
+  font-size: 16px;
+  line-height: 1.88;
 }
 .works-list .link:hover,
 .works-list .link:focus {

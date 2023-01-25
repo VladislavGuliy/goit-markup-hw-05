@@ -290,11 +290,12 @@ body {
 .qualities-list .icon-wrapper {
   display: flex;
   height: 120px;
-  border-radius: 4px;
-  background-color: var(--third-background-color);
   margin-bottom: 30px;
   justify-content: center;
   align-items: center;
+
+  border-radius: 4px;
+  background-color: var(--third-background-color);
 }
 
 .qualities-list .item:last-child,
